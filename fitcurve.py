@@ -30,7 +30,7 @@ from math import sqrt
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-# A script to manipulate control points of a bezier curve to make it
+# A script for manipulating control points of a bezier curve to make it
 # more 'square' or more 'round'.
 # I've seen a similar feature in Glyphs (glyphsapp.com).
 # To use it, select at least two consecutive points,
