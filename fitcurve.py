@@ -205,7 +205,7 @@ def fit_curve ():
 (0 = curve becomes a line, 100 = control points converge)""")
         if value == None: return False
         else:
-            return int(value)/100.0
+            return float(value)/100.0
 
     def fit_selected_segments (registerobject, glyph):
         l = glyph.layers[glyph.activeLayer]
@@ -214,6 +214,7 @@ def fit_curve ():
             v = ask_user_fit ()
         except:
             fontforge.postError("Bad Value", "Input was not a number")
+            return
         if v == False: return
         for contour in selection:
             for s in filter (is_curve_seg, contour):
