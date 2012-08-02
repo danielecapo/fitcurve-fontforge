@@ -203,7 +203,7 @@ def fit_curve ():
     def ask_user_fit ():
         value = fontforge.askString("Fit Curve", """Enter a number 
 (0 = curve becomes a line, 100 = control points converge)""")
-        if value == None: return False
+        if value == None: return value
         else:
             return float(value)/100.0
 
@@ -215,7 +215,7 @@ def fit_curve ():
         except:
             fontforge.postError("Bad Value", "Input was not a number")
             return
-        if v == False: return
+        if v == None: return
         for contour in selection:
             for s in filter (is_curve_seg, contour):
                 fit_segment (s, v)
